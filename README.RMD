@@ -1,0 +1,162 @@
+#Using R 4.0.2 to finish this assignment.
+
+##Q1 Lack of package:
+```{R}
+Error in loadNamespace(name) : there is no package called ‘bookdown’
+```
+A: Install "bookdown" package
+
+##Q2 Functionals.Rmd:
+```{R}
+Error in loadNamespace(name) : there is no package called 'scales'
+```
+A: Install "scales" package
+
+
+##Q3 Fail to install "tidyselect" package:
+```{R}
+ Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
+  namespace 'rlang' 0.4.5 is being loaded, but >= 0.4.6 is required
+```
+```{R}
+ERROR: lazy loading failed for package 'tidyselect'
+```
+A:Install Rtools40.exe and reinstall the packages.
+
+##Q4 Introduction.Rmd:
+```{R}
+Quitting from lines 223-235 (Introduction.Rmd) 
+Error in cat(paste0(contributors$desc, collapse = ", ")) : 
+  invalid multibyte string at '<86>,<4e>A (\@kfeng123), Karl Forner (\@kforner), Kirill Sevastyanenko (\@kirillseva), Brian Knaus (\@knausb), Kirill M眉ller (\@krlmlr), Kriti Sen Sharma (\@ksens), Kai Tang (鍞愭伜锛<89>,NA (\@ktang), Kevin Wright (\@kwstat), suo.lawrence.liu@gmail.com (\@Lawrence-Liu), \@ldfmrails, Kevin Kainan Li (\@legendre6891), Rachel Severson (\@leighseverson), Laurent Gatto (\@lgatto), C. Jason Liang (\@liangcj), Steve Lianoglou (\@lianos), Yongfu Liao (\@liao961120), Likan (\@likanzhan), \@lindbrook, Lingbing Feng (\@Lingbing), Marcel Ramos (\@LiNk-NY), Zhongpeng Lin (\@linzhp), Lionel Henry (\@lionel-), Llu铆s (\@llrs), myq (\@lrcg), Luke W Johnston (\@lwjohnst86), Kevin Lynagh (\@lynaghk), \@MajoroMask, Malcolm Barrett (\@malcolmbarrett), \@mannyishere, \@mascaretti, Matt (\@mattbaggott), Matthew Grogan (\@mattgrogan), \@matthewhillary, Matthieu Gomez (\@matthieugomez), Matt Malin (\@mattmalin), Mauro Lepore (\@maurolepore), Max Ghenis (\@MaxGhenis), M
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> cat
+Error in Rscript_render(f, render_args, render_meta, add1, add2) : 
+  Failed to compile Introduction.Rmd
+```
+A:
+Edit the Instroduction.Rmd by adding ```encoding = "UTF-8"``` in line 224 can fix it.
+
+
+Q5 R6.Rmd:
+```{R}
+Error in loadNamespace(name) : there is no package called 'DBI'
+```
+```{R}
+Error in (function (cond)  : 
+   error in evaluating the argument 'drv' in selecting a method for function 'dbConnect': there is no package called 'RSQLite'
+```
+A:
+1.Install "DBI" package.
+2.Install "RSQLite" package.
+
+
+Q6 OO-tradeoffs.Rmd:
+```{R}
+Error in library(zeallot) : there is no package called 'zeallot'
+```
+
+A:
+Install "zeallot" package.
+
+Q7 Big-picture.Rmd:
+```{R}
+Error in library(lobstr) : there is no package called 'lobstr'
+Error in library(dplyr) : there is no package called 'dplyr'
+Quitting from lines 209-221 (Big-picture.Rmd) 
+Error: The dbplyr package is required to communicate with database backends.
+```
+A:
+1.Install "lobstr" package.
+2.Install "dplyr" package.
+3.Install "dbplyr" package.
+
+Q8 Perf-measure.Rmd:
+```{R}
+Quitting from lines 38-40 (Perf-measure.Rmd) 
+Error in library(profvis) : there is no package called 'profvis'
+Error in library(bench) : there is no package called 'bench'
+```
+A:
+1.Install "profvis" package.
+2.Install "bench" package.
+
+Q9 Perf-measure.Rmd:
+```{R}
+Quitting from lines 233-234 (Perf-measure.Rmd) 
+Error in loadNamespace(name) : there is no package called 'ggplot2'
+Error: `ggplot2` and `tidyr` must be installed to use `autoplot`
+Error: `ggbeeswarm` must be installed to use `type = "beeswarm"` option
+```
+A:
+1.Install "ggplot2" package.
+2.Install "tidyr" package.
+3.Install "ggbeeswarm" package.
+
+Q10 Rcpp.Rmd:
+```{R}
+Error in sourceCpp(code = code, env = env, rebuild = rebuild, cacheDir = cacheDir,  : 
+  Error 1 occurred building shared library.
+```
+
+A:
+Add R binaries and Rtools directories to system's PATH environment variable.
+```{R}
+writeLines('PATH="E:/rtools40/usr/bin"',con="~/.Renviron")
+install.packages("jsonlite", type = "source")
+```
+Q11 Missing front:
+```{R}
+! fontspec error: "font-not-found"
+! 
+! The font "Inconsolata" cannot be found.
+```
+A:
+Update all the R and LaTex packages
+```{R}
+update.packages(ask = FALSE, checkBuilt = TRUE)
+tinytex::tlmgr_update()
+tinytex:::install_prebuilt()
+```
+Q12 Front "Inconsolata" is missing after rebuild "tinytex" package:
+```{R}
+! Package fontspec Error: The font "Inconsolata" cannot be found.
+```
+A:
+I tried to install Inconsolata font with its otf files in control panel but the "tinytex" package still failed to recognize this front.
+
+
+
+Q13 Fail to compile _main.tex:
+```{R}
+LaTeX failed to compile _main.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips. See _main.log for more info.
+```
+
+A:
+Because the "tinytex" failed to recognize the "Inconsolata" font, the _main.tex could not be compiled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
