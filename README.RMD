@@ -108,30 +108,25 @@ Q11 Missing front:
 ! fontspec error: "font-not-found"
 ! 
 ! The font "Inconsolata" cannot be found.
+! Package fontspec Error: The font "Andale Mono" cannot be found.
+
+! kpathsea:make_tex: Invalid filename `Andale Mono', contains ' '
 ```
 A:
-Update all the R and LaTex packages
-```{R}
-update.packages(ask = FALSE, checkBuilt = TRUE)
-tinytex::tlmgr_update()
-tinytex:::install_prebuilt()
-```
+The PC system is Windows 10.
+
+Download "inconsolata" and "andale mono" fonts from the internet and click these otf/ttf files with right button and choose "Install for all users".
+
+
 Q12 Front "Inconsolata" is missing after rebuild "tinytex" package:
 ```{R}
-! Package fontspec Error: The font "Inconsolata" cannot be found.
+! LaTeX Error: Environment sidebar undefined.
 ```
 A:
-I tried to install Inconsolata font with its otf files in control panel but the "tinytex" package still failed to recognize this front.
 
 
 
-Q13 Fail to compile _main.tex:
-```{R}
-LaTeX failed to compile _main.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips. See _main.log for more info.
-```
 
-A:
-Because the "tinytex" failed to recognize the "Inconsolata" font, the _main.tex could not be compiled.
 
 
 
