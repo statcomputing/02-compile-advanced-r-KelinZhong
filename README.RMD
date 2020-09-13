@@ -118,17 +118,6 @@ The PC system is Windows 10.
 Download "inconsolata" and "andale mono" fonts from the internet and click these otf/ttf files with right button and choose "Install for all users".
 
 
-Q12 siderbar.lua can not be recognize as an environment in latex:
-```{R}
-! LaTeX Error: Environment sidebar undefined.
-```
-A:
-
-
-
-
-
-
 
 
 
